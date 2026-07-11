@@ -38,6 +38,9 @@ const route = createBrowserRouter([
     path: "/history/:menu",
     element: <HistoryPage />,
   },
+  {
+    basename: "/Shoes-Shop",
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
