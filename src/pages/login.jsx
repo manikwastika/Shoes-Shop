@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import AuthForm from "../components/Layouts/Authmembers";
+import AuthForm from "../components/Layouts/AuthMembers";
 import FormLogin from "../components/Fragments/FormLogin";
 
 function LoginPage() {

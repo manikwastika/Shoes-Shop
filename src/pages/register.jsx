@@ -1,5 +1,5 @@
 import FormRegister from "../components/Fragments/FormRegister";
-import AuthForm from "../components/Layouts/Authmembers";
+import AuthForm from "../components/Layouts/AuthMembers";
 
 function RegisterPage() {
   return (
