@@ -1,4 +1,4 @@
-import MainLogo from "../Element/logos/MainLogo";
+import MainLogo from "../Element/Logos/MainLogo";
 import { Link } from "react-router";
 import FormLogin from "../Fragments/FormLogin";
 import Buttons from "../Element/Button/Button";
