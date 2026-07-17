@@ -31,7 +31,7 @@ function HistoryLayouts(props) {
                 <div>
                   <div className="flex flex-col items-center pt-10 space-y-2 pb-10 px-10">
                     <img
-                      src={`${import.meta.env.BASE_URL}/img/profile/profiles.png`}
+                      src={`${import.meta.env.BASE_URL}img/profile/profiles.png`}
                       alt="manikwastika"
                       className="w-15 h-15 rounded-full"
                     />

@@ -7,19 +7,19 @@ import BnWBackgournd from "../components/Layouts/BlackAndWhite";
 
 const slides = [
   {
-    img: `${import.meta.env.BASE_URL}/img/shoes/S1_nobg.png`,
+    img: `${import.meta.env.BASE_URL}img/shoes/S1_nobg.png`,
     label: "Slide 1",
   },
   {
-    img: `${import.meta.env.BASE_URL}/img/shoes/S2_nobg.png`,
+    img: `${import.meta.env.BASE_URL}img/shoes/S2_nobg.png`,
     label: "Slide 2",
   },
   {
-    img: `${import.meta.env.BASE_URL}/img/shoes/S3_nobg.png`,
+    img: `${import.meta.env.BASE_URL}img/shoes/S3_nobg.png`,
     label: "Slide 3",
   },
   {
-    img: `${import.meta.env.BASE_URL}/img/shoes/S4_nobg.png`,
+    img: `${import.meta.env.BASE_URL}img/shoes/S4_nobg.png`,
     label: "Slide 4",
   },
 ];
@@ -86,7 +86,7 @@ function IndexPage() {
                 </div>
               </div>
               <Link
-                to={`/${import.meta.env.BASE_URL}/product`}
+                to={`${import.meta.env.BASE_URL}product`}
                 className="max-w-35 text-center py-2 rounded-xl font-Manrope text-sm bg-black hover:bg-slate-500 transition-all duration-300 text-white"
               >
                 Selengkapnya

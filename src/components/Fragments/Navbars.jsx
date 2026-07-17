@@ -19,7 +19,7 @@ function CustomNavbar(props) {
       timer: 1500,
     });
 
-    window.location.href = `${import.meta.env.BASE_URL}/`;
+    window.location.href = `${import.meta.env.BASE_URL}`;
   }
 
   const {
@@ -109,7 +109,7 @@ function CustomNavbar(props) {
                   {nama}
                 </h1>
                 <img
-                  src={`${import.meta.env.BASE_URL}/img/profile/profiles.png`}
+                  src={`${import.meta.env.BASE_URL}img/profile/profiles.png`}
                   alt="manikwastika"
                   className="w-10 h-10 rounded-full"
                 />
