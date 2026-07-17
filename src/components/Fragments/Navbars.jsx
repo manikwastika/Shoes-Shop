@@ -59,7 +59,7 @@ function CustomNavbar(props) {
             </Link>
             <div className="space-x-4">
               <Link
-                to={`/`}
+                to="/"
                 className={`px-3 py-1 ${active === "home" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 Home
