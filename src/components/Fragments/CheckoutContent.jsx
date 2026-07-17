@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 import useOngkir from "../../hooks/useOngkir";
 import { useState } from "react";
 
@@ -9,7 +9,8 @@ function CheckOutContent() {
 
   function cancelCheckout() {
     localStorage.removeItem("payment");
-    window.location.href = `${import.meta.env.BASE_URL}history/cart`;
+    Navigate("/history/cart");
+    // window.location.href = `${import.meta.env.BASE_URL}history/cart"`;
   }
   return (
     <section class="bg-white">

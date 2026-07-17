@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCart from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 
 function CartContent() {
   const [favorites, setFavorites] = useState([]);
@@ -101,7 +101,8 @@ function CartContent() {
     ];
     localStorage.setItem("payment", JSON.stringify(paymentProcesed));
     setCash([...cash, paymentProcesed]);
-    window.location.href = `${import.meta.env.BASE_URL}history/checkout`;
+    Navigate("/history/checkout");
+    // window.location.href = `${import.meta.env.BASE_URL}history/checkout`;
   }
 
   return (

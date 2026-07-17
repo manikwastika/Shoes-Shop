@@ -3,6 +3,7 @@ import CustomNavbar from "../components/Fragments/Navbars";
 import Swal from "sweetalert2";
 import useCart from "../hooks/useCart";
 import useProducts from "../hooks/useProducts";
+import { Navigate } from "react-router";
 
 function ProductPage(props) {
   const { products } = useProducts();
@@ -43,7 +44,8 @@ function ProductPage(props) {
         showConfirmButton: false,
         timer: 3500,
       });
-      window.location.href = "/login";
+      Navigate("/login");
+      // window.location.href = `${import.meta.env.BASE_URL}login`;
     }
   }
 

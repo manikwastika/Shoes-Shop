@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import Buttons from "../Element/Button/Button";
 import InputForms from "../Element/Input";
+import { Navigate } from "react-router";
 
 function FormLogin() {
   async function handleSubmit(event) {
@@ -26,7 +27,8 @@ function FormLogin() {
     localStorage.setItem("email", event.target.email.value);
     localStorage.setItem("password", event.target.password.value);
 
-    window.location.href = `${import.meta.env.BASE_URL}`;
+    Navigate("/");
+    // window.location.href = `${import.meta.env.BASE_URL}`;
   }
   return (
     <form

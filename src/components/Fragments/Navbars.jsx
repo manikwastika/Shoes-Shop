@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 import Buttons from "../Element/Button/Button";
 import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
@@ -18,8 +18,8 @@ function CustomNavbar(props) {
       showConfirmButton: false,
       timer: 1500,
     });
-
-    window.location.href = `${import.meta.env.BASE_URL}`;
+    Navigate("/");
+    // window.location.href = `${import.meta.env.BASE_URL}`;
   }
 
   const {
