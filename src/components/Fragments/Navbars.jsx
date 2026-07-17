@@ -59,25 +59,25 @@ function CustomNavbar(props) {
             </Link>
             <div className="space-x-4">
               <Link
-                to={`/${import.meta.env.BASE_URL}/`}
+                to={`/`}
                 className={`px-3 py-1 ${active === "home" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 Home
               </Link>
               <Link
-                to={`/${import.meta.env.BASE_URL}/product`}
+                to={`/product`}
                 className={`px-3 py-1 ${active === "product" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} text-sm rounded-md hover:shadow-sm transition-all duration-300`}
               >
                 Product
               </Link>
               <Link
-                to={`/${import.meta.env.BASE_URL}/history/overview`}
+                to={`${import.meta.env.BASE_URL}/history/overview`}
                 className={`px-3 py-1 ${active === "history" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 History
               </Link>
               <Link
-                to={`/${import.meta.env.BASE_URL}/contact`}
+                to={`${import.meta.env.BASE_URL}contact`}
                 className={`px-3 py-1 ${active === "contact" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 Contact
