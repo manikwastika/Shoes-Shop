@@ -43,7 +43,7 @@ function ProductPage(props) {
         showConfirmButton: false,
         timer: 3500,
       });
-      window.location.href = `${import.meta.env.BASE_URL}login`;
+      window.location.href = "/login";
     }
   }
 
