@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Buttons from "../Element/Button/Button";
 import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
@@ -7,6 +7,7 @@ const nama = localStorage.getItem("email");
 
 function CustomNavbar(props) {
   const { cart, setCart } = useCart();
+  const navigate = useNavigate();
 
   async function handleLogout() {
     localStorage.removeItem("email");
@@ -18,7 +19,7 @@ function CustomNavbar(props) {
       showConfirmButton: false,
       timer: 1500,
     });
-    Navigate("/");
+    navigate("/");
     // window.location.href = `${import.meta.env.BASE_URL}`;
   }
 

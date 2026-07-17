@@ -1,13 +1,15 @@
 import { useState } from "react";
 import useCart from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
-import { Link, Navigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function CartContent() {
   const [favorites, setFavorites] = useState([]);
   const { cart, setCart } = useCart();
   const { products } = useProducts();
   const [cash, setCash] = useState([]);
+
+  const navigate = useNavigate();
 
   const layanan = 2000;
   const biayaAdmin = 5000;
@@ -101,7 +103,7 @@ function CartContent() {
     ];
     localStorage.setItem("payment", JSON.stringify(paymentProcesed));
     setCash([...cash, paymentProcesed]);
-    Navigate("/history/checkout");
+    navigate("/history/checkout");
     // window.location.href = `${import.meta.env.BASE_URL}history/checkout`;
   }
 

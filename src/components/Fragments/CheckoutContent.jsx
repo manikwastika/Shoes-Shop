@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import useOngkir from "../../hooks/useOngkir";
 import { useState } from "react";
 
@@ -7,9 +7,11 @@ function CheckOutContent() {
   const { ongkir } = useOngkir();
   const payment = JSON.parse(localStorage.getItem("payment"));
 
+  const navigate = useNavigate();
+
   function cancelCheckout() {
     localStorage.removeItem("payment");
-    Navigate("/history/cart");
+    navigate("/history/cart");
     // window.location.href = `${import.meta.env.BASE_URL}history/cart"`;
   }
   return (

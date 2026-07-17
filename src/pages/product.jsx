@@ -3,13 +3,15 @@ import CustomNavbar from "../components/Fragments/Navbars";
 import Swal from "sweetalert2";
 import useCart from "../hooks/useCart";
 import useProducts from "../hooks/useProducts";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 
 function ProductPage(props) {
   const { products } = useProducts();
   const [items, setItems] = useState(products);
   // const [cart, setCart] = useState([]);
   const { cart, setCart } = useCart();
+
+  const navigate = useNavigate();
 
   function deleteCart(id) {
     const dataCarts = JSON.parse(localStorage.getItem("cart") || []);
@@ -44,7 +46,7 @@ function ProductPage(props) {
         showConfirmButton: false,
         timer: 3500,
       });
-      Navigate("/login");
+      navigate("/login");
       // window.location.href = `${import.meta.env.BASE_URL}login`;
     }
   }
