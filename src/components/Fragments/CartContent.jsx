@@ -101,7 +101,7 @@ function CartContent() {
     ];
     localStorage.setItem("payment", JSON.stringify(paymentProcesed));
     setCash([...cash, paymentProcesed]);
-    window.location.href = "/history/checkout";
+    window.location.href = `${import.meta.env.BASE_URL}/history/checkout`;
   }
 
   return (
