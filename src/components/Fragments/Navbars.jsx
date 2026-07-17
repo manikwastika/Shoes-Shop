@@ -65,19 +65,19 @@ function CustomNavbar(props) {
                 Home
               </Link>
               <Link
-                to={`/product`}
+                to="/product"
                 className={`px-3 py-1 ${active === "product" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} text-sm rounded-md hover:shadow-sm transition-all duration-300`}
               >
                 Product
               </Link>
               <Link
-                to={`${import.meta.env.BASE_URL}/history/overview`}
+                to="/history/overview"
                 className={`px-3 py-1 ${active === "history" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 History
               </Link>
               <Link
-                to={`${import.meta.env.BASE_URL}contact`}
+                to="/contact"
                 className={`px-3 py-1 ${active === "contact" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 Contact
@@ -86,10 +86,7 @@ function CustomNavbar(props) {
           </div>
           {localStorage.getItem("email") ? (
             <div className="h-full flex items-center space-x-5">
-              <Link
-                to={`/${import.meta.env.BASE_URL}/history/cart`}
-                className="relative"
-              >
+              <Link to="/history/cart" className="relative">
                 <ion-icon
                   name="cart"
                   className={`${cartStyle} text-2xl hover:text-slate-500 hover:cursor-pointer transition-all duration-300`}
@@ -130,7 +127,7 @@ function CustomNavbar(props) {
             <div className="h-full flex items-center text-sm">
               <div>
                 <Link
-                  to={`/${import.meta.env.BASE_URL}/login`}
+                  to="/login"
                   className={`px-3 py-1 hover:${hoverBgRight} ${ColorRight} hover:${hoverTextRight} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
                 >
                   Login
@@ -139,7 +136,7 @@ function CustomNavbar(props) {
               <span className={`mx-5 ${textColorRight}`}>|</span>
               <div>
                 <Link
-                  to={`/${import.meta.env.BASE_URL}/register`}
+                  to="/register"
                   className={`px-3 py-1 text-sm hover:${hoverBgRight} ${ColorRight}  hover:${hoverTextRight} hover:shadow-sm rounded-md transition-all duration-300`}
                 >
                   Register

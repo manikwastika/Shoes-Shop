@@ -624,7 +624,7 @@ function CheckOutContent() {
                 Pesanan akan langsung diproses oleh penjual setelah anda klik
                 proceed to payment{" "}
                 <Link
-                  to={`/${import.meta.env.BASE_URL}/history/cart`}
+                  to="/history/cart"
                   title=""
                   class="font-medium text-primary-700 underline hover:no-underline"
                 >

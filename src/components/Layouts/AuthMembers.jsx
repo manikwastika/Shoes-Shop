@@ -33,10 +33,7 @@ function QuestionAuth(props) {
       <div className="px-15 mx-auto text-center pt-1">
         <span className="py-2.5 text-sm text-center font-Funnel">
           Dont have an Account ?{" "}
-          <Link
-            to={`/${import.meta.env.BASE_URL}/register`}
-            className="font-bold text-blue-500"
-          >
+          <Link to="/register" className="font-bold text-blue-500">
             Register
           </Link>
         </span>
@@ -47,10 +44,7 @@ function QuestionAuth(props) {
       <div className="px-15 mx-auto text-center pt-1">
         <span className="py-2.5 text-sm text-center font-Funnel">
           Do you have an Account ?{" "}
-          <Link
-            to={`/${import.meta.env.BASE_URL}/login`}
-            className="font-bold text-blue-500"
-          >
+          <Link to="/login" className="font-bold text-blue-500">
             Login
           </Link>
         </span>

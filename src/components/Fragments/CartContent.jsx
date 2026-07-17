@@ -369,7 +369,7 @@ function CartContent() {
           <div className="flex items-center justify-center gap-2">
             <span className="text-sm font-normal text-gray-500">atau</span>
             <Link
-              to={`/${import.meta.env.BASE_URL}/product`}
+              to="/product"
               title=""
               className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline"
             >
