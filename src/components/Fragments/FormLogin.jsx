@@ -26,7 +26,7 @@ function FormLogin() {
     localStorage.setItem("email", event.target.email.value);
     localStorage.setItem("password", event.target.password.value);
 
-    window.location.href = `/${import.meta.env.BASE_URL}/`;
+    window.location.href = "/";
   }
   return (
     <form

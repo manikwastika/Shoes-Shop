@@ -101,7 +101,7 @@ function CartContent() {
     ];
     localStorage.setItem("payment", JSON.stringify(paymentProcesed));
     setCash([...cash, paymentProcesed]);
-    window.location.href = `/${import.meta.env.BASE_URL}/history/checkout`;
+    window.location.href = "/history/checkout";
   }
 
   return (
@@ -120,10 +120,7 @@ function CartContent() {
                 <div key={product.id} className="space-y-6">
                   <div className="rounded-lg border border-gray-300 bg-white p-4 shadow-sm md:p-6">
                     <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
-                      <a
-                        href={`/${import.meta.env.BASE_URL}/product`}
-                        className="shrink-0 md:order-1"
-                      >
+                      <a href="" className="shrink-0 md:order-1">
                         <img
                           className="h-20 w-20"
                           src={product.img}
@@ -206,7 +203,7 @@ function CartContent() {
 
                       <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
                         <a
-                          href={`/${import.meta.env.BASE_URL}/product`}
+                          href=""
                           className="text-base font-medium text-gray-900 hover:underline"
                         >
                           {product.name}

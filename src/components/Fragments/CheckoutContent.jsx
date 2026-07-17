@@ -9,7 +9,7 @@ function CheckOutContent() {
 
   function cancelCheckout() {
     localStorage.removeItem("payment");
-    window.location.href = `/${import.meta.env.BASE_URL}/history/cart`;
+    window.location.href = "/history/cart";
   }
   return (
     <section class="bg-white">

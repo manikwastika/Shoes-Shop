@@ -19,7 +19,7 @@ function CustomNavbar(props) {
       timer: 1500,
     });
 
-    window.location.href = `/${import.meta.env.BASE_URL}/`;
+    window.location.href = "/";
   }
 
   const {
@@ -36,7 +36,7 @@ function CustomNavbar(props) {
       <div className="w-full h-full max-w-[90%] mx-auto">
         <div className="w-full h-full flex justify-between items-center">
           <div className="h-full flex items-center space-x-5">
-            <Link to={`/${import.meta.env.BASE_URL}/`}>
+            <Link to="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="92"
@@ -109,7 +109,7 @@ function CustomNavbar(props) {
                   {nama}
                 </h1>
                 <img
-                  src={`/${import.meta.env.BASE_URL}/img/profile/profiles.png`}
+                  src="/img/profile/profiles.png"
                   alt="manikwastika"
                   className="w-10 h-10 rounded-full"
                 />
