@@ -13,35 +13,37 @@ import CartProvider from "./context/CartContext.jsx";
 import DataProducts from "./context/DataProduct.jsx";
 import OngkirCotextProvider from "./context/DataOngkir.jsx";
 
-const route = createBrowserRouter([
-  {
-    path: "/",
-    element: <IndexPage />,
-  },
-  {
-    path: "/product",
-    element: <ProductPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/register",
-    element: <RegisterPage />,
-  },
-  {
-    path: "/contact",
-    element: <ContactPage />,
-  },
-  {
-    path: "/history/:menu",
-    element: <HistoryPage />,
-  },
+const route = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <IndexPage />,
+    },
+    {
+      path: "/product",
+      element: <ProductPage />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/register",
+      element: <RegisterPage />,
+    },
+    {
+      path: "/contact",
+      element: <ContactPage />,
+    },
+    {
+      path: "/history/:menu",
+      element: <HistoryPage />,
+    },
+  ],
   {
     basename: "/Shoes-Shop",
   },
-]);
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

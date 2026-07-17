@@ -9,7 +9,7 @@ function RefundContent() {
 
           <div class="items-center gap-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm sm:flex">
             <a
-              href="#"
+              href={`/${import.meta.env.BASE_URL}/`}
               class="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
             >
               <img
@@ -172,7 +172,7 @@ function RefundContent() {
 
           <div class="sm:flex items-center sm:space-x-4 space-y-4 sm:space-y-0">
             <a
-              href="#"
+              href={`/${import.meta.env.BASE_URL}/`}
               title=""
               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
               role="button"

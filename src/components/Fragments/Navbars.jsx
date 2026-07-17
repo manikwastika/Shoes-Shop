@@ -19,7 +19,7 @@ function CustomNavbar(props) {
       timer: 1500,
     });
 
-    window.location.href = "/";
+    window.location.href = `/${import.meta.env.BASE_URL}/`;
   }
 
   const {
@@ -36,7 +36,7 @@ function CustomNavbar(props) {
       <div className="w-full h-full max-w-[90%] mx-auto">
         <div className="w-full h-full flex justify-between items-center">
           <div className="h-full flex items-center space-x-5">
-            <Link to="/">
+            <Link to={`/${import.meta.env.BASE_URL}/`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="92"
@@ -59,25 +59,25 @@ function CustomNavbar(props) {
             </Link>
             <div className="space-x-4">
               <Link
-                to="/"
+                to={`/${import.meta.env.BASE_URL}/`}
                 className={`px-3 py-1 ${active === "home" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 Home
               </Link>
               <Link
-                to="/product"
+                to={`/${import.meta.env.BASE_URL}/product`}
                 className={`px-3 py-1 ${active === "product" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} text-sm rounded-md hover:shadow-sm transition-all duration-300`}
               >
                 Product
               </Link>
               <Link
-                to="/history/overview"
+                to={`/${import.meta.env.BASE_URL}/history/overview`}
                 className={`px-3 py-1 ${active === "history" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 History
               </Link>
               <Link
-                to="/contact"
+                to={`/${import.meta.env.BASE_URL}/contact`}
                 className={`px-3 py-1 ${active === "contact" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
                 Contact
@@ -86,7 +86,10 @@ function CustomNavbar(props) {
           </div>
           {localStorage.getItem("email") ? (
             <div className="h-full flex items-center space-x-5">
-              <Link to="/history/cart" className="relative">
+              <Link
+                to={`/${import.meta.env.BASE_URL}/history/cart`}
+                className="relative"
+              >
                 <ion-icon
                   name="cart"
                   className={`${cartStyle} text-2xl hover:text-slate-500 hover:cursor-pointer transition-all duration-300`}
@@ -109,7 +112,7 @@ function CustomNavbar(props) {
                   {nama}
                 </h1>
                 <img
-                  src="/img/profile/profiles.png"
+                  src={`/${import.meta.env.BASE_URL}/img/profile/profiles.png`}
                   alt="manikwastika"
                   className="w-10 h-10 rounded-full"
                 />
@@ -127,7 +130,7 @@ function CustomNavbar(props) {
             <div className="h-full flex items-center text-sm">
               <div>
                 <Link
-                  to="/login"
+                  to={`/${import.meta.env.BASE_URL}/login`}
                   className={`px-3 py-1 hover:${hoverBgRight} ${ColorRight} hover:${hoverTextRight} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
                 >
                   Login
@@ -136,7 +139,7 @@ function CustomNavbar(props) {
               <span className={`mx-5 ${textColorRight}`}>|</span>
               <div>
                 <Link
-                  to="/register"
+                  to={`/${import.meta.env.BASE_URL}/register`}
                   className={`px-3 py-1 text-sm hover:${hoverBgRight} ${ColorRight}  hover:${hoverTextRight} hover:shadow-sm rounded-md transition-all duration-300`}
                 >
                   Register

@@ -31,7 +31,7 @@ function HistoryLayouts(props) {
                 <div>
                   <div className="flex flex-col items-center pt-10 space-y-2 pb-10 px-10">
                     <img
-                      src="/img/profile/profiles.png"
+                      src={`/${import.meta.env.BASE_URL}/img/profile/profiles.png`}
                       alt="manikwastika"
                       className="w-15 h-15 rounded-full"
                     />
@@ -39,7 +39,7 @@ function HistoryLayouts(props) {
                   </div>
                   <div className="flex flex-col">
                     <Link
-                      to="/history/overview"
+                      to={`/${import.meta.env.BASE_URL}/history/overview`}
                       className={`${pages === "overview" && "bg-gray-200"} w-full h-full flex items-center py-4 shadow-sm px-10 font-Manrope text-sm font-semibold hover:bg-gray-200 transition-all duration-300`}
                     >
                       <span className="w-full h-full flex items-center">
@@ -55,7 +55,7 @@ function HistoryLayouts(props) {
                       ></ion-icon>
                     </Link>
                     <Link
-                      to="/history/cart"
+                      to={`/${import.meta.env.BASE_URL}/history/cart`}
                       className={`${pages === "cart" && "bg-gray-200"} w-full h-full flex items-center py-4 shadow-sm px-10 font-Manrope text-sm font-semibold hover:bg-gray-200 transition-all duration-300`}
                     >
                       <span className="w-full h-full flex items-center">
@@ -72,7 +72,7 @@ function HistoryLayouts(props) {
                     </Link>
                     {localStorage.getItem("payment") ? (
                       <Link
-                        to="/history/checkout"
+                        to={`/${import.meta.env.BASE_URL}/history/checkout`}
                         className={`${pages === "checkout" && "bg-gray-200"} w-full h-full flex items-center py-4 shadow-sm px-10 font-Manrope text-sm font-semibold hover:bg-gray-200 transition-all duration-300`}
                       >
                         <span className="w-full h-full flex items-center">
@@ -105,7 +105,7 @@ function HistoryLayouts(props) {
                     {localStorage.getItem("payment") ? (
                       localStorage.getItem("alamat") ? (
                         <Link
-                          to="/history/tracking"
+                          to={`/${import.meta.env.BASE_URL}/history/tracking`}
                           className={`${pages === "tracking" && "bg-gray-200"} w-full h-full flex items-center py-4 shadow-sm px-10 font-Manrope text-sm font-semibold hover:bg-gray-200 transition-all duration-300`}
                         >
                           <span className="w-full h-full flex items-center">
@@ -153,7 +153,7 @@ function HistoryLayouts(props) {
                     {localStorage.getItem("payment") ? (
                       localStorage.getItem("refund") ? (
                         <Link
-                          to="/history/refund"
+                          to={`/${import.meta.env.BASE_URL}/history/refund`}
                           className={`${pages === "refund" && "bg-gray-200"} w-full h-full flex items-center py-4 shadow-sm px-10 font-Manrope text-sm font-semibold hover:bg-gray-200 transition-all duration-300`}
                         >
                           <span className="w-full h-full flex items-center">
@@ -216,7 +216,10 @@ function HistoryLayouts(props) {
                 <div class="w-full h-full gap-5">
                   <div className="w-full h-[8%] flex items-center space-x-2">
                     {pages === "overview" || pages === "cart" ? (
-                      <Link to="/product" className="h-full flex items-center">
+                      <Link
+                        to={`/${import.meta.env.BASE_URL}/product`}
+                        className="h-full flex items-center"
+                      >
                         <ion-icon
                           name="chevron-back"
                           className="text-xl"
@@ -224,7 +227,7 @@ function HistoryLayouts(props) {
                       </Link>
                     ) : (
                       <Link
-                        to="/history/cart"
+                        to={`/${import.meta.env.BASE_URL}/history/cart`}
                         className="h-full flex items-center"
                       >
                         <ion-icon
@@ -252,7 +255,7 @@ function HistoryLayouts(props) {
                           <p className="text-xl text-gray-500">
                             silahkan{" "}
                             <Link
-                              to="/product"
+                              to={`/${import.meta.env.BASE_URL}/product`}
                               className="text-blue-500 hover:underline hover:text-blue-700 transition-all duration-300"
                             >
                               pilih product

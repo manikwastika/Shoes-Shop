@@ -9,7 +9,7 @@ function TrackingContent() {
                 <div class="space-y-4 p-6 border-b border-gray-300">
                   <div class="flex justify-between items-center ">
                     <div className="flex items-center gap-5">
-                      <a href="#" class="h-14 w-14 shrink-0">
+                      <a href="" class="h-14 w-14 shrink-0">
                         <img
                           class="h-full w-full dark:hidden"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
@@ -257,7 +257,7 @@ function TrackingContent() {
                 </button>
 
                 <a
-                  href="#"
+                  href=""
                   class="mt-4 flex w-full items-center justify-center rounded-lg bg-primary-700  px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 sm:mt-0"
                 >
                   Order details

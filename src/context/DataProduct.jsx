@@ -5,7 +5,7 @@ export const ProductsContext = createContext();
 const products = [
   {
     id: 1,
-    img: "/img/shoes/S1.png",
+    img: `${import.meta.env.BASE_URL}/img/shoes/S1.png`,
     name: "Nike Court Vision Low Canvas",
     deskripsi:
       "Classic low-top sneakers offering timeless style, durable canvas comfort, and versatile everyday wear experience.",
@@ -13,7 +13,7 @@ const products = [
   },
   {
     id: 2,
-    img: "/img/shoes/S2.png",
+    img: `${import.meta.env.BASE_URL}/img/shoes/S2.png`,
     name: "Adidas Samba OG Black Gum",
     deskripsi:
       "Iconic leather sneakers featuring timeless design, exceptional comfort, durable gum soles, and everyday versatility.",
@@ -21,7 +21,7 @@ const products = [
   },
   {
     id: 3,
-    img: "/img/shoes/S3.png",
+    img: `${import.meta.env.BASE_URL}/img/shoes/S3.png`,
     name: "Adidas Galaxy 7",
     deskripsi:
       "Lightweight running shoes delivering breathable comfort, responsive cushioning, reliable traction, and everyday performance effortlessly.",
@@ -29,7 +29,7 @@ const products = [
   },
   {
     id: 4,
-    img: "/img/shoes/S4.jpg",
+    img: `${import.meta.env.BASE_URL}/img/shoes/S4.jpg`,
     name: "pantofel oxford quarter cap toe",
     deskripsi:
       "Elegant leather dress shoes offering timeless craftsmanship, refined comfort, professional style, and durability daily.",

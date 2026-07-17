@@ -9,11 +9,11 @@ function CheckOutContent() {
 
   function cancelCheckout() {
     localStorage.removeItem("payment");
-    window.location.href = "/history/cart";
+    window.location.href = `/${import.meta.env.BASE_URL}/history/cart`;
   }
   return (
     <section class="bg-white">
-      <form action="#" class="mx-auto w-full px-4 2xl:px-0">
+      <form class="mx-auto w-full px-4 2xl:px-0">
         <div class="lg:flex lg:items-start gap-10">
           <div class="min-w-0 flex-col max-w-[60%] space-y-4">
             <div class="space-y-4">
@@ -624,7 +624,7 @@ function CheckOutContent() {
                 Pesanan akan langsung diproses oleh penjual setelah anda klik
                 proceed to payment{" "}
                 <Link
-                  to="/history/cart"
+                  to={`/${import.meta.env.BASE_URL}/history/cart`}
                   title=""
                   class="font-medium text-primary-700 underline hover:no-underline"
                 >
