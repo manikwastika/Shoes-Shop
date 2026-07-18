@@ -2,10 +2,12 @@ import { Link, useNavigate } from "react-router";
 import Buttons from "../Element/Button/Button";
 import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
+import useUsername from "../../hooks/useUsername";
 
 const nama = localStorage.getItem("email");
 
 function CustomNavbar(props) {
+  const { username, setUsername } = useUsername();
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
 
@@ -107,7 +109,7 @@ function CustomNavbar(props) {
                 <h1
                   className={`font-bold text-sm font-Raleway ${active === "home" ? "text-white" : ""}`}
                 >
-                  {nama}
+                  {username}
                 </h1>
                 <img
                   src={`${import.meta.env.BASE_URL}img/profile/profiles.png`}

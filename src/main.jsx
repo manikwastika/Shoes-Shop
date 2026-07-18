@@ -12,6 +12,7 @@ import ContactPage from "./pages/contact.jsx";
 import CartProvider from "./context/CartContext.jsx";
 import DataProducts from "./context/DataProduct.jsx";
 import OngkirCotextProvider from "./context/DataOngkir.jsx";
+import UsernameContextProvide from "./context/Username.jsx";
 
 const route = createBrowserRouter(
   [
@@ -50,7 +51,9 @@ createRoot(document.getElementById("root")).render(
     <DataProducts>
       <CartProvider>
         <OngkirCotextProvider>
-          <RouterProvider router={route} />
+          <UsernameContextProvide>
+            <RouterProvider router={route} />
+          </UsernameContextProvide>
         </OngkirCotextProvider>
       </CartProvider>
     </DataProducts>

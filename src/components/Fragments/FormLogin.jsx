@@ -2,8 +2,10 @@ import Swal from "sweetalert2";
 import Buttons from "../Element/Button/Button";
 import InputForms from "../Element/Input";
 import { useNavigate } from "react-router";
+import useUsername from "../../hooks/useUsername";
 
 function FormLogin() {
+  const { username, setUsername } = useUsername();
   const navigate = useNavigate();
 
   async function handleSubmit(event) {
@@ -25,9 +27,9 @@ function FormLogin() {
       });
       return;
     }
-
     localStorage.setItem("email", event.target.email.value);
     localStorage.setItem("password", event.target.password.value);
+    setUsername(localStorage.getItem("email"));
 
     navigate("/");
     // window.location.href = `${import.meta.env.BASE_URL}`;
