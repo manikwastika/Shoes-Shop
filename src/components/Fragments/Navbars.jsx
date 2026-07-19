@@ -14,6 +14,7 @@ function CustomNavbar(props) {
   async function handleLogout() {
     localStorage.removeItem("email");
     localStorage.removeItem("password");
+    setUsername("");
 
     await Swal.fire({
       icon: "success",

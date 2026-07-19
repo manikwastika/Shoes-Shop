@@ -6,10 +6,10 @@ import CartContent from "../Fragments/CartContent";
 import CheckOutContent from "../Fragments/CheckoutContent";
 import TrackingContent from "../Fragments/TrackingContent";
 import RefundContent from "../Fragments/RefundContent";
-
-const nama = localStorage.getItem("email");
+import useUsername from "../../hooks/useUsername";
 
 function HistoryLayouts(props) {
+  const { username, setUsername } = useUsername();
   const { pages } = props;
   const { cart, setCart } = useCart();
 
@@ -23,7 +23,7 @@ function HistoryLayouts(props) {
         active="history"
         ColorRight="text-white bg-black"
       />
-      {nama && (
+      {username && (
         <div className="w-full h-[calc(100vh-60px)] flex justify-center items-center">
           <div className="flex w-full h-full max-w-[80%] max-h-[90%] rounded-3xl bg-white shadow-lg border border-gray-200">
             <div className="w-[25%] h-full border-r border-gray-200">
@@ -35,7 +35,9 @@ function HistoryLayouts(props) {
                       alt="manikwastika"
                       className="w-15 h-15 rounded-full"
                     />
-                    <h1 className={`font-bold text-sm font-Raleway`}>{nama}</h1>
+                    <h1 className={`font-bold text-sm font-Raleway`}>
+                      {username}
+                    </h1>
                   </div>
                   <div className="flex flex-col">
                     <Link
