@@ -13,6 +13,7 @@ import CartProvider from "./context/CartContext.jsx";
 import DataProducts from "./context/DataProduct.jsx";
 import OngkirCotextProvider from "./context/DataOngkir.jsx";
 import UsernameContextProvide from "./context/Username.jsx";
+import AlamatCotextProvider from "./context/DataAlamat.jsx";
 
 const route = createBrowserRouter(
   [
@@ -52,7 +53,9 @@ createRoot(document.getElementById("root")).render(
       <CartProvider>
         <OngkirCotextProvider>
           <UsernameContextProvide>
-            <RouterProvider router={route} />
+            <AlamatCotextProvider>
+              <RouterProvider router={route} />
+            </AlamatCotextProvider>
           </UsernameContextProvide>
         </OngkirCotextProvider>
       </CartProvider>

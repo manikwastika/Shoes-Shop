@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router";
 import useOngkir from "../../hooks/useOngkir";
 import { useState } from "react";
+import useAlamat from "../../hooks/useAlamat";
 
 function CheckOutContent() {
+  const { alamat, setAlamat } = useAlamat();
   const [selectedOngkir, setSelectedOngkir] = useState();
   const { ongkir } = useOngkir();
   const payment = JSON.parse(localStorage.getItem("payment"));
@@ -14,16 +16,56 @@ function CheckOutContent() {
     navigate("/history/cart");
     // window.location.href = `${import.meta.env.BASE_URL}history/cart"`;
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    // namaLengkap
+    // email
+    // telepon
+    // provinsi
+    // kabupaten
+    // kecamatan
+    // jalan
+    // kodepos
+    // payment_method
+    // delivery_method
+
+    const namaLengkap = e.target.namaLengkap.value;
+    const email = e.target.email.value;
+    const telepon = e.target.telepon.value;
+    const provinsi = e.target.provinsi.value;
+    const kabupaten = e.target.kabupaten.value;
+    const kecamatan = e.target.kecamatan.value;
+    const jalan = e.target.jalan.value;
+    const kodepos = e.target.kodepos.value;
+    const payment_method = e.target.payment_method.value;
+    const delivery_method = e.target.delivery_method.value;
+
+    const dataAlamat = {
+      namaLengkap,
+      email,
+      telepon,
+      provinsi,
+      kabupaten,
+      kecamatan,
+      jalan,
+      kodepos,
+      payment_method,
+      delivery_method,
+    };
+  }
+
   return (
-    <section class="bg-white">
-      <form class="mx-auto w-full px-4 2xl:px-0">
+    <section class="bg-white pt-2">
+      <form onSubmit={handleSubmit} class="mx-auto w-full px-4 2xl:px-0">
         <div class="lg:flex lg:items-start gap-10">
           <div class="min-w-0 flex-col max-w-[60%] space-y-4">
             <div class="space-y-4">
               <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label
-                    for="your_name"
+                    for="namaLengkap"
                     class="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Nama Lengkap
@@ -31,7 +73,8 @@ function CheckOutContent() {
                   </label>
                   <input
                     type="text"
-                    id="your_name"
+                    name="namaLengkap"
+                    id="namaLengkap"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                     placeholder="John Doe"
                     required
@@ -41,14 +84,15 @@ function CheckOutContent() {
 
                 <div>
                   <label
-                    for="your_email"
+                    for="email"
                     class="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Email<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
-                    id="your_email"
+                    name="email"
+                    id="email"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                     placeholder="example@gmail.com"
                     required
@@ -57,77 +101,19 @@ function CheckOutContent() {
 
                 <div>
                   <label
-                    for="phone-input-3"
+                    for="telepon"
                     class="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Phone Number
                     <span className="text-red-500">*</span>
                   </label>
                   <div class="flex items-center relative">
-                    <button
-                      type="button"
-                      class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-100"
-                      type="button"
-                    >
-                      <svg
-                        fill="none"
-                        aria-hidden="true"
-                        className="me-2 h-4 w-4"
-                        viewBox="0 0 20 15"
-                      >
-                        <rect
-                          width="19.6"
-                          height="14"
-                          x="0"
-                          y="0.5"
-                          rx="2"
-                          fill="#FFFFFF"
-                        />
-
-                        <mask
-                          id="indonesia-flag"
-                          x="0"
-                          y="0"
-                          width="20"
-                          height="15"
-                          maskUnits="userSpaceOnUse"
-                        >
-                          <rect
-                            width="19.6"
-                            height="14"
-                            x="0"
-                            y="0.5"
-                            rx="2"
-                            fill="#FFFFFF"
-                          />
-                        </mask>
-
-                        <g mask="url(#indonesia-flag)">
-                          {/* Merah */}
-                          <rect
-                            width="19.6"
-                            height="7"
-                            x="0"
-                            y="0.5"
-                            fill="#E70011"
-                          />
-
-                          {/* Putih */}
-                          <rect
-                            width="19.6"
-                            height="7"
-                            x="0"
-                            y="7.5"
-                            fill="#FFFFFF"
-                          />
-                        </g>
-                      </svg>
-                      +62
-                    </button>
                     <div class="relative w-full">
                       <input
                         type="number"
-                        class="z-20 block w-full rounded-e-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                        name="telepon"
+                        id="telepon"
+                        class="z-20 block w-full rounded-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                         placeholder="0813-8006-8000"
                         required
                       />
@@ -138,7 +124,7 @@ function CheckOutContent() {
                 <div>
                   <div class="mb-2 flex items-center gap-2">
                     <label
-                      for="select-city-input-3"
+                      for="provinsi"
                       class="block text-sm font-medium text-gray-900"
                     >
                       Provinsi
@@ -147,7 +133,8 @@ function CheckOutContent() {
                   </div>
                   <select
                     defaultValue="Pilih Provinsi"
-                    id="select-city-input-3"
+                    id="provinsi"
+                    name="provinsi"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                   >
                     <option value="">Pilih Provinsi</option>
@@ -158,7 +145,7 @@ function CheckOutContent() {
                 <div>
                   <div class="mb-2 flex items-center gap-2">
                     <label
-                      for="select-country-input-3"
+                      for="kabupaten"
                       class="block text-sm font-medium text-gray-900"
                     >
                       Kabupaten / Kota
@@ -167,7 +154,8 @@ function CheckOutContent() {
                   </div>
                   <select
                     defaultValue="Pilih Kabupaten/Kota"
-                    id="select-country-input-3"
+                    id="kabupaten"
+                    name="kabupaten"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                   >
                     <option value="">Pilih Kabupaten/Kota</option>
@@ -193,14 +181,15 @@ function CheckOutContent() {
 
                 <div>
                   <label
-                    for="kodepos"
+                    for="kecamatan"
                     class="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Kecamatan / Desa<span className="text-red-500">*</span>
                   </label>
                   <select
                     defaultValue="Pilih Kecamatan"
-                    id="select-country-input-3"
+                    id="kecamatan"
+                    name="kecamatan"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                   >
                     <option value="">Pilih Kecamatan</option>
@@ -283,14 +272,15 @@ function CheckOutContent() {
 
                 <div>
                   <label
-                    for="company_name"
+                    for="jalan"
                     class="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Nama Jalan dan Gang<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="company_name"
+                    id="jalan"
+                    name="jalan"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                     placeholder="Jl. example Gang Example"
                     required
@@ -299,48 +289,19 @@ function CheckOutContent() {
 
                 <div>
                   <label
-                    for="vat_number"
+                    for="kodepos"
                     class="mb-2 block text-sm font-medium text-gray-900"
                   >
                     Kode Pos
                   </label>
                   <input
                     type="number"
+                    id="kodepos"
+                    name="kodepos"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                     placeholder="083145"
                     required
                   />
-                </div>
-
-                <div class="sm:col-span-2 w-full flex gap-5">
-                  <button
-                    type="submit"
-                    class="flex w-[50%] items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
-                  >
-                    <svg
-                      class="h-5 w-5"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 12h14m-7 7V5"
-                      />
-                    </svg>
-                    Tambah Alamat
-                  </button>
-                  <select className="flex w-[50%] rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900">
-                    <option value="">Pilih Alamat</option>
-                    <option value="rumah">Rumah</option>
-                    <option value="kantor">Kantor</option>
-                  </select>
                 </div>
               </div>
             </div>
@@ -356,7 +317,8 @@ function CheckOutContent() {
                     <div class="flex h-5 items-center">
                       <input
                         type="radio"
-                        name="payment-method"
+                        name="payment_method"
+                        value="1"
                         defaultChecked={true}
                         class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600"
                       />
@@ -460,7 +422,7 @@ function CheckOutContent() {
                           value={expedisi.id}
                           checked={selectedOngkir?.id == expedisi.id}
                           onChange={() => setSelectedOngkir(expedisi)}
-                          name="delivery-method"
+                          name="delivery_method"
                           class="h-4 w-4 border-gray-300 bg-white text-primary-600"
                         />
                       </div>
