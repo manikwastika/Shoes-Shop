@@ -11,6 +11,8 @@ function CustomNavbar(props) {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
 
+  setUsername(localStorage.getItem("email"));
+
   async function handleLogout() {
     localStorage.removeItem("email");
     localStorage.removeItem("password");
