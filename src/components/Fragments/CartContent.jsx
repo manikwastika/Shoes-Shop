@@ -108,7 +108,7 @@ function CartContent() {
   }
 
   return (
-    <div className="w-full h-[91%] flex gap-5 pb-10 pt-2">
+    <div className="w-full h-full flex gap-5 pb-10">
       <div className="w-[70%] overflow-auto space-y-6">
         {cart.length !== 0 &&
           products

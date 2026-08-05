@@ -80,7 +80,7 @@ function CustomNavbar(props) {
                 to="/history/overview"
                 className={`px-3 py-1 ${active === "history" ? "bg-black text-white" : "hover:bg-black hover:text-white text-black"} rounded-md text-sm hover:shadow-sm transition-all duration-300`}
               >
-                History
+                Overview
               </Link>
               <Link
                 to="/contact"

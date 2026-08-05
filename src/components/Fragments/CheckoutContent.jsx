@@ -57,7 +57,7 @@ function CheckOutContent() {
   }
 
   return (
-    <section class="bg-white pt-2">
+    <section class=" pt-2 w-full h-full">
       <form onSubmit={handleSubmit} class="mx-auto w-full px-4 2xl:px-0">
         <div class="lg:flex lg:items-start gap-10">
           <div class="min-w-0 flex-col max-w-[60%] space-y-4">
