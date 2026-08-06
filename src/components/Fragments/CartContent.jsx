@@ -125,7 +125,7 @@ function CartContent() {
                     <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                       <a href="" className="shrink-0 md:order-1">
                         <img
-                          className="h-20 w-20"
+                          className="h-20 w-20 rounded-lg"
                           src={product.img}
                           alt="imac image"
                         />

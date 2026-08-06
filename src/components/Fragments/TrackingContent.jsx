@@ -1,4 +1,18 @@
+import { useState } from "react";
+import useProducts from "../../hooks/useProducts";
+import useCart from "../../hooks/useCart";
+
 function TrackingContent() {
+  const [favorites, setFavorites] = useState([]);
+  const { cart, setCart } = useCart();
+  const { products } = useProducts();
+  const [cash, setCash] = useState([]);
+  const payment = JSON.parse(localStorage.getItem("payment"));
+
+  function cancleOrder() {
+    localStorage.removeItem("alamat");
+  }
+
   return (
     <section class="w-full h-[90%] pb-7">
       <div class="mx-auto w-full h-full px-4 2xl:px-0">
@@ -6,47 +20,55 @@ function TrackingContent() {
           <div class="w-full h-full divide-gray-200 overflow-hidden rounded-lg border border-gray-200 lg:max-w-xl xl:max-w-2xl">
             <div className="w-full h-[90%] flex flex-col justify-between">
               <div className="w-full overflow-auto">
-                <div class="space-y-4 p-6 border-b border-gray-300">
-                  <div class="flex justify-between items-center ">
-                    <div className="flex items-center gap-5">
-                      <a href="" class="h-14 w-14 shrink-0">
-                        <img
-                          class="h-full w-full dark:hidden"
-                          src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
-                          alt="phone image"
-                        />
-                        <img
-                          class="hidden h-full w-full dark:block"
-                          src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg"
-                          alt="phone image"
-                        />
-                      </a>
+                {cart.length !== 0 &&
+                  products
+                    .filter((product) =>
+                      cart.some((item) => item.id === product.id),
+                    )
+                    .map((product) => {
+                      const cartItem = cart.find(
+                        (item) => item.id === product.id,
+                      );
 
-                      <a
-                        href="#"
-                        class="min-w-0 flex-1 font-medium text-gray-900 hover:underline"
-                      >
-                        {" "}
-                        APPLE iPhone 15 5G phone.
-                        <p class="text-sm font-normal text-gray-500 mt-1">
-                          <span class="font-medium text-gray-900">
-                            Product ID:
-                          </span>{" "}
-                          BJ8364850
-                        </p>
-                      </a>
-                    </div>
-                    <div class="flex flex-col items-center gap-4">
-                      <div class="flex items-center justify-end gap-4">
-                        <p class="text-base font-normal text-gray-900">x3</p>
+                      return (
+                        <div class="space-y-4 p-6 border-b border-gray-300">
+                          <div class="flex justify-between items-center">
+                            <div className="flex items-center gap-5">
+                              <a href="" class="h-14 w-14 shrink-0">
+                                <img
+                                  class="h-full w-full rounded-lg"
+                                  src={product.img}
+                                  alt="phone image"
+                                />
+                              </a>
 
-                        <p class="text-xl font-bold leading-tight text-gray-900">
-                          $2,997
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                              <a
+                                href="#"
+                                class="min-w-0 flex-1 font-medium text-gray-900 hover:underline"
+                              >
+                                {" "}
+                                {product.name}
+                                <p class="text-sm font-normal text-gray-500 mt-1">
+                                  <span class="font-medium text-gray-900">
+                                    Product ID:
+                                  </span>{" "}
+                                  {product.id}
+                                </p>
+                              </a>
+                            </div>
+                            <div class="flex flex-col items-center gap-4">
+                              <div class="flex items-center justify-end gap-4">
+                                <p class="text-base font-normal text-gray-900">
+                                  x{cartItem.qty}
+                                </p>
+
+                                <p class="text-xl font-bold leading-tight text-gray-900"></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
               </div>
 
               <div class="w-full space-y-4 border-t border-gray-200 p-6">
@@ -250,8 +272,9 @@ function TrackingContent() {
 
               <div class="gap-4 sm:flex sm:items-center">
                 <button
+                  onClick={cancleOrder}
                   type="button"
-                  class="w-full rounded-lg  border border-gray-200 bg-white px-5  py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+                  class="w-full rounded-lg hover:cursor-pointer border border-gray-200 bg-white px-5  py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
                 >
                   Cancel the order
                 </button>

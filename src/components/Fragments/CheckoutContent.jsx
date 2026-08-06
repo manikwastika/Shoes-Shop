@@ -41,19 +41,26 @@ function CheckOutContent() {
     const kodepos = e.target.kodepos.value;
     const payment_method = e.target.payment_method.value;
     const delivery_method = e.target.delivery_method.value;
+    const newPayment = e.target.newPayment.value;
+    console.log(newPayment);
 
-    const dataAlamat = {
-      namaLengkap,
-      email,
-      telepon,
-      provinsi,
-      kabupaten,
-      kecamatan,
-      jalan,
-      kodepos,
-      payment_method,
-      delivery_method,
-    };
+    const dataAlamat = [
+      {
+        namaLengkap,
+        email,
+        telepon,
+        provinsi,
+        kabupaten,
+        kecamatan,
+        jalan,
+        kodepos,
+        payment_method,
+        delivery_method,
+      },
+    ];
+
+    localStorage.setItem("alamat", JSON.stringify(dataAlamat));
+    navigate("/history/tracking");
   }
 
   return (
@@ -132,6 +139,7 @@ function CheckOutContent() {
                     </label>
                   </div>
                   <select
+                    required
                     defaultValue="Pilih Provinsi"
                     id="provinsi"
                     name="provinsi"
@@ -153,6 +161,7 @@ function CheckOutContent() {
                     </label>
                   </div>
                   <select
+                    required
                     defaultValue="Pilih Kabupaten/Kota"
                     id="kabupaten"
                     name="kabupaten"
@@ -187,6 +196,7 @@ function CheckOutContent() {
                     Kecamatan / Desa<span className="text-red-500">*</span>
                   </label>
                   <select
+                    required
                     defaultValue="Pilih Kecamatan"
                     id="kecamatan"
                     name="kecamatan"
@@ -558,6 +568,22 @@ function CheckOutContent() {
                         style: "currency",
                         currency: "IDR",
                       })}
+                    <input
+                      type="hidden"
+                      name="newPayment"
+                      value={payment
+                        .map(
+                          (cash) =>
+                            cash.biayaAdmin +
+                            cash.layanan +
+                            cash.setelahDiskon +
+                            (selectedOngkir ? selectedOngkir.harga : 0),
+                        )
+                        .toLocaleString("id-ID", {
+                          style: "currency",
+                          currency: "IDR",
+                        })}
+                    />
                   </dd>
                 </dl>
               </div>
