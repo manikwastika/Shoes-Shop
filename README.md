@@ -1,1 +1,3 @@
 # React + Vite
+
+AVAILABLE IN DEKSTOP VIEW
